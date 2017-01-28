@@ -61,7 +61,8 @@ class Craps(object):
                     point = d
                     print "Your point is", "[", point, "]", "Game continues"
 
-                    # for subsequence rolls
+
+                # for subsequence rolls
                 while gameStatus == "CONTINUE":
                     sum = self.Dices()
                     if not sum in (7, point):
@@ -99,7 +100,6 @@ class Craps(object):
         print "Overall, you have %d%% to win!" % percent
 
 c = Craps(20)
-
 c.AboveMinimum(betted_amounts)
 c.Dices()
 c.SimulationGame(betted_amounts)
