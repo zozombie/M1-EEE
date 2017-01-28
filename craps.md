@@ -4,6 +4,7 @@ school work
 import random
 random.seed(3456)
 
+betted_amounts = (48, 67, 10)
 sim_win = 0
 sim_lose = 0
 gain_player = 0
@@ -15,7 +16,6 @@ class Craps(object):
 
     def AboveMinimum(self, betted_amounts):
         result_Above = []
-
         for betted_amount in betted_amounts:
             if betted_amount >= self.minimum_bet:
                 print "New game. Your bet is", betted_amount
@@ -34,7 +34,6 @@ class Craps(object):
 
     def SimulationGame(self, betted_amounts):
         result_bets = []
-
         global sim_win, sim_lose, point
         global gain_casino, gain_player
 
@@ -60,7 +59,7 @@ class Craps(object):
                     point = d
                     print "Your point is", "[", point, "]", "Game continues"
 
-                    # for subsequence rolls
+                # for subsequence rolls
                 while gameStatus == "CONTINUE":
                     sum = self.Dices()
                     if not sum in (7, point):
@@ -97,12 +96,7 @@ class Craps(object):
         print "Lost ", sim_lose
         print "Overall, you have %d%% to win!" % percent
 
-
-
-
 c = Craps(20)
-betted_amounts = (48, 67, 10)
-
 c.AboveMinimum(betted_amounts)
 c.Dices()
 c.SimulationGame(betted_amounts)
