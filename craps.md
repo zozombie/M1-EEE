@@ -16,6 +16,7 @@ class Craps(object):
 
     def AboveMinimum(self, betted_amounts):
         result_Above = []
+
         for betted_amount in betted_amounts:
             if betted_amount >= self.minimum_bet:
                 print "New game. Your bet is", betted_amount
@@ -34,6 +35,7 @@ class Craps(object):
 
     def SimulationGame(self, betted_amounts):
         result_bets = []
+
         global sim_win, sim_lose, point
         global gain_casino, gain_player
 
@@ -58,6 +60,7 @@ class Craps(object):
                     gameStatus = "CONTINUE"
                     point = d
                     print "Your point is", "[", point, "]", "Game continues"
+
 
                 # for subsequence rolls
                 while gameStatus == "CONTINUE":
@@ -91,7 +94,7 @@ class Craps(object):
     def RollTheDices(self):
         total = sim_win + sim_lose
         percent = float(sim_win) / total * 100
-        print "There are", total, "players "
+        print "There are", total, "players " 
         print "Won ", sim_win
         print "Lost ", sim_lose
         print "Overall, you have %d%% to win!" % percent
@@ -101,3 +104,4 @@ c.AboveMinimum(betted_amounts)
 c.Dices()
 c.SimulationGame(betted_amounts)
 c.RollTheDices()
+
